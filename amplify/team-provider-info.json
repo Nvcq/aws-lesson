@@ -11,5 +11,23 @@
       "StackId": "arn:aws:cloudformation:eu-west-1:059806695932:stack/amplify-awslesson-dev-102107/ce20f560-dcf8-11ed-8f30-0adeb77b0401",
       "AmplifyAppId": "d1v7e2gtilu3c"
     }
+  },
+  "nvcqback": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awslesson-nvcqback-111922-authRole",
+      "UnauthRoleArn": "arn:aws:iam::059806695932:role/amplify-awslesson-nvcqback-111922-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::059806695932:role/amplify-awslesson-nvcqback-111922-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-awslesson-nvcqback-111922-deployment",
+      "UnauthRoleName": "amplify-awslesson-nvcqback-111922-unauthRole",
+      "StackName": "amplify-awslesson-nvcqback-111922",
+      "StackId": "arn:aws:cloudformation:eu-west-1:059806695932:stack/amplify-awslesson-nvcqback-111922/f0fd6430-dd00-11ed-ac97-02e70e60b857",
+      "AmplifyAppId": "d1v7e2gtilu3c"
+    },
+    "categories": {
+      "storage": {
+        "ladbtropcool": {}
+      }
+    }
   }
 }
