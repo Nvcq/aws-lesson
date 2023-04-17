@@ -29,5 +29,17 @@
         "ladbtropcool": {}
       }
     }
-  }
-}
+  },
+  "diegoback": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awslesson-diegoback-113614-authRole",
+      "UnauthRoleArn": "arn:aws:iam::059806695932:role/amplify-awslesson-diegoback-113614-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::059806695932:role/amplify-awslesson-diegoback-113614-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-awslesson-diegoback-113614-deployment",
+      "UnauthRoleName": "amplify-awslesson-diegoback-113614-unauthRole",
+      "StackName": "amplify-awslesson-diegoback-113614",
+      "StackId": "arn:aws:cloudformation:eu-west-1:059806695932:stack/amplify-awslesson-diegoback-113614/487e98d0-dd03-11ed-b26b-0641c9bf4747",
+      "AmplifyAppId": "d1v7e2gtilu3c"
+    }
+  },
