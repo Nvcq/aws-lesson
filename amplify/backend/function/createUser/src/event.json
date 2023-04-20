@@ -1,0 +1,10 @@
+{ 
+    "httpMethod": "POST",
+    "body": {
+        "email": "a.c@gmail.com",
+        "firstname": "alex",
+        "lastname": "coda",
+        "age": "30"
+
+    }
+}

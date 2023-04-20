@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/createUser": {
+      "name": "/createUser",
+      "lambdaFunction": "createUser",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/getUser": {
+      "name": "/getUser",
+      "lambdaFunction": "getUser",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
