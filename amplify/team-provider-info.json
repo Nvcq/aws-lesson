@@ -13,17 +13,36 @@
     },
     "categories": {
       "storage": {
-        "users": {}
+        "users": {},
+        "awsprojectbucket": {}
       },
       "function": {
         "createUser": {
           "deploymentBucketName": "amplify-awslesson-dev-122214-deployment",
           "s3Key": "amplify-builds/createUser-7a72354c4c6d42647a51-build.zip"
         },
-        "getUser": {}
+        "getUser": {
+          "deploymentBucketName": "amplify-awslesson-dev-122214-deployment",
+          "s3Key": "amplify-builds/getUser-5a4a75474d6a692f2f77-build.zip"
+        },
+        "getUrl": {
+          "deploymentBucketName": "amplify-awslesson-dev-122214-deployment",
+          "s3Key": "amplify-builds/getUrl-6577446b61546855334c-build.zip"
+        },
+        "sendData": {
+          "deploymentBucketName": "amplify-awslesson-dev-122214-deployment",
+          "s3Key": "amplify-builds/sendData-786c7149465653456e68-build.zip"
+        },
+        "IdUserSearch": {
+          "deploymentBucketName": "amplify-awslesson-dev-122214-deployment",
+          "s3Key": "amplify-builds/IdUserSearch-7634306d313734696d6b-build.zip"
+        }
       },
       "api": {
         "users": {}
+      },
+      "auth": {
+        "awslessona2e2aec5": {}
       }
     }
   }

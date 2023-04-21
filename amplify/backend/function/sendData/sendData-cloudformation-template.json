@@ -59,12 +59,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "getUser",
+            "sendData",
             {
               "Fn::Join": [
                 "",
                 [
-                  "getUser",
+                  "sendData",
                   "-",
                   {
                     "Ref": "env"
@@ -110,12 +110,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "awslessonLambdaRoled35a9be3",
+            "awslessonLambdaRole0368136d",
             {
               "Fn::Join": [
                 "",
                 [
-                  "awslessonLambdaRoled35a9be3",
+                  "awslessonLambdaRole0368136d",
                   "-",
                   {
                     "Ref": "env"
@@ -209,7 +209,9 @@
                 "dynamodb:List*",
                 "dynamodb:Describe*",
                 "dynamodb:Scan",
-                "dynamodb:Query"
+                "dynamodb:Query",
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*"
               ],
               "Resource": [
                 {
@@ -248,6 +250,32 @@
               "Effect": "Allow",
               "Action": [
                 "secretsmanager:GetSecretValue"
+              ],
+              "Resource": "*"
+            }
+          ]
+        }
+      },
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ]
+    },
+    "sqsexecutionpolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "sqs-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "sqs:*"
               ],
               "Resource": "*"
             }

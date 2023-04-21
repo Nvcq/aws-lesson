@@ -27,6 +27,10 @@
     "storageusersStreamArn": {
       "Type": "String",
       "Default": "storageusersStreamArn"
+    },
+    "storageawsprojectbucketBucketName": {
+      "Type": "String",
+      "Default": "storageawsprojectbucketBucketName"
     }
   },
   "Conditions": {
@@ -59,12 +63,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "getUser",
+            "getUrl",
             {
               "Fn::Join": [
                 "",
                 [
-                  "getUser",
+                  "getUrl",
                   "-",
                   {
                     "Ref": "env"
@@ -90,6 +94,9 @@
             },
             "STORAGE_USERS_STREAMARN": {
               "Ref": "storageusersStreamArn"
+            },
+            "STORAGE_AWSPROJECTBUCKET_BUCKETNAME": {
+              "Ref": "storageawsprojectbucketBucketName"
             }
           }
         },
@@ -110,12 +117,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "awslessonLambdaRoled35a9be3",
+            "awsprojectLambdaRole2bbcd9be",
             {
               "Fn::Join": [
                 "",
                 [
-                  "awslessonLambdaRoled35a9be3",
+                  "awsprojectLambdaRole2bbcd9be",
                   "-",
                   {
                     "Ref": "env"
@@ -227,36 +234,48 @@
                   ]
                 }
               ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": "s3:ListBucket",
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "storageawsprojectbucketBucketName"
+                      }
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:PutObject",
+                "s3:GetObject"
+              ],
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "storageawsprojectbucketBucketName"
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
             }
           ]
         }
       }
-    },
-    "secretsmanagerexecutionpolicy": {
-      "Type": "AWS::IAM::Policy",
-      "Properties": {
-        "PolicyName": "secretmanager-execution-policy",
-        "Roles": [
-          {
-            "Ref": "LambdaExecutionRole"
-          }
-        ],
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Action": [
-                "secretsmanager:GetSecretValue"
-              ],
-              "Resource": "*"
-            }
-          ]
-        }
-      },
-      "DependsOn": [
-        "LambdaExecutionRole"
-      ]
     }
   },
   "Outputs": {

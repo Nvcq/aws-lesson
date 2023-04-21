@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "storage": {
+      "users": [
+        "read"
+      ],
+      "awsprojectbucket": [
+        "create",
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

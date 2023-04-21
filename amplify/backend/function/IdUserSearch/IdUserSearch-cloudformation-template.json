@@ -59,12 +59,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "getUser",
+            "IdUserSearch",
             {
               "Fn::Join": [
                 "",
                 [
-                  "getUser",
+                  "IdUserSearch",
                   "-",
                   {
                     "Ref": "env"
@@ -110,12 +110,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "awslessonLambdaRoled35a9be3",
+            "awslessonLambdaRole6e0e131c",
             {
               "Fn::Join": [
                 "",
                 [
-                  "awslessonLambdaRoled35a9be3",
+                  "awslessonLambdaRole6e0e131c",
                   "-",
                   {
                     "Ref": "env"
@@ -232,10 +232,10 @@
         }
       }
     },
-    "secretsmanagerexecutionpolicy": {
+    "sqsexecutionpolicy": {
       "Type": "AWS::IAM::Policy",
       "Properties": {
-        "PolicyName": "secretmanager-execution-policy",
+        "PolicyName": "sqs-execution-policy",
         "Roles": [
           {
             "Ref": "LambdaExecutionRole"
@@ -247,7 +247,7 @@
             {
               "Effect": "Allow",
               "Action": [
-                "secretsmanager:GetSecretValue"
+                "sqs:*"
               ],
               "Resource": "*"
             }

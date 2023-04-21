@@ -14,6 +14,20 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/getUrl": {
+      "name": "/getUrl",
+      "lambdaFunction": "getUrl",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/sendData": {
+      "name": "/sendData",
+      "lambdaFunction": "sendData",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }
